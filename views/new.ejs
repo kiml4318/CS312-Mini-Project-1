@@ -1,0 +1,45 @@
+<!-- Standartd HTML setup -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Post</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<!-- add header for creating a new post -->
+    <header>
+        <h1>Create a New Blog Post</h1>
+    </header>
+<!-- create a form for creating a new psot 
+     use POST method for submission -->
+
+     <!-- Continue adding attributes for the new post page -->
+    <main>
+        <form action="/" method="POST">
+            <div>
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+
+            <div>
+                <label for="author">Author:</label>
+                <input type="text" id="author" name="author" required>
+            </div>
+
+            <div>
+                <label for="content">Content:</label>
+                <textarea id="content" name="content" rows="5" required></textarea>
+            </div>
+
+            <button type="submit">Create Post</button>
+        </form>
+
+        <footer>
+            <a href="/">Back to Home</a>
+        </footer>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!-- Html document  setup (standard html structure learned last semester)-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Homepage</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+    <!-- Display main heading for the homepage -->
+    <header>
+        <h1>Mini-Project-1: Blog Web Application</h1>
+        <nav>
+            <!-- Create button for creating a new post -->
+            <a href="/new" class="btn btn-primary">Create New Post</a>
+        </nav>
+    </header>
+    <!-- Display secondary header for all blog posts -->
+    <main>
+        <h2>All Blog Posts</h2>
+
+        <!-- Check if posts are available -->
+         <!-- For each post, display title and content, and create a professional footer showing author and time created-->
+        <% if (posts.length > 0) { %>
+            <ul class="posts-list">
+                <% posts.forEach(post => { %>
+                    <li class="post">
+                        <article>
+                            <h3><%= post.title %></h3>
+                            <p><%= post.content %></p>
+                            <footer>
+                                <small>Written by <strong><%= post.author %></strong> on <%= post.date %></small>
+                            </footer>
+
+                            <!-- Create edit and delete buttons -->
+                            <div class="post-actions">
+                                <a href="/edit/<%= post.id %>" class="btn btn-secondary">Edit</a>
+                                <a href="/delete/<%= post.id %>" class="btn btn-secondary">Delete</a>
+                            </div>
+                        </article>
+                    </li>
+                <% }); %>
+            </ul>
+        <% } else { %>
+            <!-- Message if there are no posts -->
+            <p>No blog posts available. <a href="/new" class="btn btn-primary">Create one now!</a></p>
+        <% } %>
+
+    </main>
+</body>
+</html>
+

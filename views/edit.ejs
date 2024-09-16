@@ -1,0 +1,43 @@
+<!-- Standard HTML setup-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Post</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<!-- Create header for edit page -->
+    <header>
+        <h1>Edit Blog Post</h1>
+    </header>
+
+    <main>
+        <!-- fill the form with the current post data -->
+        <form action="/edit/<%= post.id %>" method="POST">
+            <div>
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" value="<%= post.title %>" required>
+            </div>
+
+            <div>
+                <label for="author">Author:</label>
+                <input type="text" id="author" name="author" value="<%= post.author %>" required>
+            </div>
+
+            <div>
+                <label for="content">Content:</label>
+                <textarea id="content" name="content" rows="5" required><%= post.content %></textarea>
+            </div>
+
+            <button type="submit">Save Changes</button>
+        </form>
+        <!-- Create link back to the homepage to exit editing the post. -->
+        <footer>
+            <a href="/">Back to Home</a>
+        </footer>
+    </main>
+
+</body>
+</html>
